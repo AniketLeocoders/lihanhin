@@ -15,9 +15,9 @@ const UndoRestart = ({ resetSlice }) => {
                 <BiUndo className=' cursor-pointer font-black text-xl' onClick={handleUndo} />
             </Tooltip>
 
-            {/* <Tooltip title='redo' >
+            <Tooltip title='redo' >
                 <BiRedo className=' cursor-pointer font-black text-xl' onClick={handleRedo} />
-            </Tooltip> */}
+            </Tooltip>
 
             <Tooltip title='restart' >
                 <RiRestartLine className=' cursor-pointer text-lg'

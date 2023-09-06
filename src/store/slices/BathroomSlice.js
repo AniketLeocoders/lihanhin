@@ -42,10 +42,5 @@ const undoableBathroomSlice = undoable(bedroomSlice.reducer);
 // Action creators are generated for each case reducer function
 export const { updateBathroomSlice, resetBedroomSlice } = bedroomSlice.actions
 
-// export const {
-//     undo: bathroomUndo,
-//     redo: bathroomRedo,
-// } = bedroomSlice.actions;
-
 export default undoableBathroomSlice;
 // export default bedroomSlice.reducer

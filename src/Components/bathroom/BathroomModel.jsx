@@ -1,8 +1,9 @@
-import { Reflector, useGLTF, useTexture } from "@react-three/drei"
-import { useRef, useState } from "react"
+import {  useGLTF, useTexture } from "@react-three/drei"
+import { useRef } from "react"
 import { useSelector } from "react-redux";
 import * as THREE from 'three';
 import { GlassMaterial } from "../living-room/LivingModel";
+import { useSpring, animated } from 'react-spring';
 
 
 
@@ -163,7 +164,6 @@ const BathroomModel = (props) => {
                         self.uvsNeedUpdate = true;
                     }}
                 /> */}
-
             </mesh>
             <mesh
                 geometry={nodes.floorLight.geometry}

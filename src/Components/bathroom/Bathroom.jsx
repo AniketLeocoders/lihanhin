@@ -13,12 +13,12 @@ const Bathroom = () => {
     const bathroomcanvasRef = useRef();
     const cameraRef = useRef();
     const screenshotRef = useRef(null);
-    // const moveCameraToPosition = () => {
-    //     // const newPosition = new THREE.Vector3(1, 1, 1); // Replace with the desired coordinates
-    //     // cameraRef.current.position.copy(newPosition);
-    //     console.log("object", cameraRef.current.position)
-    //     // cameraRef.current.updateProjectionMatrix(); // If needed
-    // };
+    const moveCameraToPosition = () => {
+        // const newPosition = new THREE.Vector3(1, 1, 1); // Replace with the desired coordinates
+        // cameraRef.current.position.copy(newPosition);
+        console.log("object", cameraRef.current.position)
+        // cameraRef.current.updateProjectionMatrix(); // If needed
+    };
 
 
     return (
@@ -32,6 +32,7 @@ const Bathroom = () => {
                     <PerspectiveCamera
                         ref={cameraRef}
                         makeDefault
+                        // position={[2.3520, 1.36927, -1.2965]}
                         position={[3.5908, 1.7840, -1.734]}
                         // position={[3.4368, 1.57895, -1.7096]}
                         // position={[3.7722, 2.0562, -0.7930]}
@@ -51,7 +52,7 @@ const Bathroom = () => {
                     </Suspense>
                 </Canvas>
             </div>
-            {/* <button onClick={moveCameraToPosition} className=' absolute top-0 right-0'>Move</button> */}
+            <button onClick={moveCameraToPosition} className=' absolute top-0 right-0'>Move</button>
             <BathroomConfig />
             <UserMenu screenshotRef={bathroomcanvasRef}/>
             <UndoRestart resetSlice={resetBedroomSlice}/>
