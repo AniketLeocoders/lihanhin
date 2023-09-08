@@ -41,7 +41,7 @@ const MrdernKitchen = () => {
                         <MordenKtchenModel />
                         <KitchenAnnotation />
                         <ContactShadows position={[5, 5, 0]} color="pink" />
-                        <OrbitControls enablePan={false} enableZoom={false} enableRotate={false}
+                        <OrbitControls enablePan={true} enableZoom={true} enableRotate={true}
                         // minDistance={-9}   // Adjust this value as needed
                         // maxDistance={5}  // Adjust this value as needed
                         />

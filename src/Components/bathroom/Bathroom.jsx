@@ -7,6 +7,7 @@ import BathroomAnnotation from './BathroomAnnotation'
 import UserMenu from '../../componentss/UserMenu'
 import UndoRestart from '../../componentss/UndoRestart'
 import { resetBedroomSlice } from '../../store/slices/BathroomSlice'
+import ModelLoader from '../../componentss/ModelLoader'
 
 
 const Bathroom = () => {
@@ -32,8 +33,8 @@ const Bathroom = () => {
                     <PerspectiveCamera
                         ref={cameraRef}
                         makeDefault
-                        // position={[2.3520, 1.36927, -1.2965]}
                         position={[3.5908, 1.7840, -1.734]}
+                        // position={[2.3520, 1.36927, -1.2965]}
                         // position={[3.4368, 1.57895, -1.7096]}
                         // position={[3.7722, 2.0562, -0.7930]}
                         // position={[2.948, 1.5504, -2.110]}
@@ -43,19 +44,23 @@ const Bathroom = () => {
                         fov={76} // Field of view
                     // far={100}
                     />
-                    <Suspense fallback={null}>
+                    <Suspense fallback={<ModelLoader />}>
                         <Environment files="https://cdn.jsdelivr.net/gh/Sean-Bradley/React-Three-Fiber-Boilerplate@gltfjsx/public/img/forest_slope_1k.hdr" />
                         <ambientLight />
                         <BathroomModel />
                         <BathroomAnnotation />
-                        <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} />
+                        <OrbitControls enablePan={true} enableZoom={true} enableRotate={true}
+                            // position={[3.5908, 1.7840, -1.734]}
+                        //  minPolarAngle={0}
+                        //  maxPolarAngle={Math.PI / 2} 
+                        />
                     </Suspense>
                 </Canvas>
             </div>
             <button onClick={moveCameraToPosition} className=' absolute top-0 right-0'>Move</button>
             <BathroomConfig />
-            <UserMenu screenshotRef={bathroomcanvasRef}/>
-            <UndoRestart resetSlice={resetBedroomSlice}/>
+            <UserMenu screenshotRef={bathroomcanvasRef} />
+            <UndoRestart resetSlice={resetBedroomSlice} />
         </div>
     )
 }

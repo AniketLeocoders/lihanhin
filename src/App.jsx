@@ -7,16 +7,20 @@ import './App.css'
 // import Bathroom from './Components/bathroom/Bathroom'
 import { BrowserRouter } from "react-router-dom";
 import Routing from './routing/Routing';
+import AnimationTexture from './Components/animation/AnimationTexture';
+import OnlineMOdel from './Components/onlineModel/OnlineMOdel';
 
 
 function App() {
 
   return (
     <>
+    {/* <AnimationTexture/> */}
+    <OnlineMOdel/>
       {/* <div className='overflow-hidden max-w-[100vw] max-h-[100vh]'> */}
-        <BrowserRouter>
+        {/* <BrowserRouter>
           <Routing />
-        </BrowserRouter>
+        </BrowserRouter> */}
         {/* <ThreeShoes /> */}
         {/* <Kitchen /> */}
         {/* <RoomDemo /> */}

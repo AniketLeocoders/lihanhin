@@ -217,6 +217,7 @@ export let Bathroom_wall_tiles = [
     "https://media.istockphoto.com/id/1421216244/photo/water-droplets-on-white-tile.jpg?s=612x612&w=0&k=20&c=OX9yjWEoloNQ-UyywhgVM_DGe-IAlc-PdQ4LHaBdcC4=",
     "https://media.istockphoto.com/id/1446273802/photo/white-hexagon-tile-pattern-with-marble-texture.jpg?s=612x612&w=0&k=20&c=xd7qBUZutW2Z_qAWuY8VkWtcP-0MxbIkLB7equo8dnE=",
     "https://media.istockphoto.com/id/1223859787/photo/abstract-brick-wall-background-closeup-red-brick-wall-texture.webp?s=170667a&w=0&k=20&c=0jYBSxZUd839KqSEF582Bm-ULUXXrl36U9mXk-LYDp4=",
+    "https://m.media-amazon.com/images/I/41gPXlP844L._AC_UF894,1000_QL80_.jpg"
 ]
 export let Bathroom_floor_tiles = [
     "https://c8.alamy.com/zooms/9/f09cb1caeb8f43048cf50ffa3d44f653/t661y7.jpg",

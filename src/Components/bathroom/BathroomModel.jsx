@@ -1,4 +1,4 @@
-import {  useGLTF, useTexture } from "@react-three/drei"
+import { useGLTF, useTexture } from "@react-three/drei"
 import { useRef } from "react"
 import { useSelector } from "react-redux";
 import * as THREE from 'three';
@@ -12,6 +12,7 @@ const BathroomModel = (props) => {
     const mirrorMesh = useRef();
     const BathroomParameter = useSelector((state) => state.BathroomParameter?.present);
     const { nodes, materials } = useGLTF('./models/bathroom.glb')
+
 
     const FloorSize = new THREE.Vector3();
     nodes.Floor.geometry.computeBoundingBox();
@@ -28,10 +29,8 @@ const BathroomModel = (props) => {
     const WallTexture = useTexture(BathroomParameter?.wallParameter.wallTexture);
     WallTexture.wrapS = WallTexture.wrapT = THREE.RepeatWrapping;
     WallTexture.repeat.set(4, 3); // Adjust repeat values as needed
-    // WallTexture.offset.set(2, 2); // Set the offset to 0,0 to start from the beginning
 
-
-
+    // Define a spring animation for the material's map property
 
     const cabinateTopSize = new THREE.Vector3();
     nodes.mainCabinateTop.geometry.computeBoundingBox();
@@ -54,40 +53,6 @@ const BathroomModel = (props) => {
     const DoorTexture = useTexture(BathroomParameter.door.texture);
     DoorTexture.wrapS = DoorTexture.wrapT = THREE.RepeatWrapping;
     DoorTexture.repeat.set(1, 1);
-
-
-
-
-
-    // Set up mirror camera
-    // useFrame(() => {
-    //     if (mirrorMesh.current && !mirrorCamera.current) {
-    //         mirrorCamera.current = new THREE.PerspectiveCamera();
-    //         mirrorCamera.current.position.copy(mirrorMesh.current.position);
-    //         mirrorCamera.current.rotation.copy(mirrorMesh.current.rotation);
-    //         mirrorCamera.current.rotation.x *= -1;
-    //     }
-
-    //     if (mirrorMesh.current && mirrorCamera.current && !mirrorTexture) {
-    //         const renderTarget = new THREE.WebGLRenderTarget(
-    //             window.innerWidth * window.devicePixelRatio,
-    //             window.innerHeight * window.devicePixelRatio
-    //         );
-    //         setMirrorTexture(renderTarget.texture);
-    //     }
-
-    //     if (mirrorMesh.current && mirrorCamera.current && mirrorTexture) {
-    //         mirrorCamera.current.updateMatrixWorld();
-
-    //         // Render the scene to the render target texture
-    //         renderer.setRenderTarget(mirrorTexture);
-    //         renderer.render(scene, mirrorCamera.current);
-    //         renderer.setRenderTarget(null);
-
-    //         mirrorMesh.current.material.envMap = mirrorTexture;
-    //     }
-    // });
-
 
     return (
         <group ref={group} {...props} dispose={null}
@@ -135,35 +100,27 @@ const BathroomModel = (props) => {
                 material={nodes.washBasing2.material}
                 position={[0.12, 1.2, 0.5]}
                 rotation={[-Math.PI, 0, -Math.PI]}
-                material-color='white'
+            // material-color='white'
 
             />
             <mesh
                 geometry={nodes.tileWall.geometry}
-                material={new THREE.MeshStandardMaterial({
-                    map: WallTexture,
-                    // mapRotation: Math.PI / 2, // Rotate the texture by 90 degrees (in radians)
-                })}
+                // material={new THREE.MeshStandardMaterial({
+                //     map: WallTexture,
+                //     // mapRotation: Math.PI / 2, // Rotate the texture by 90 degrees (in radians)
+                // })}
                 // material={materials['Material.007']}
                 position={[-2.94, 1.54, -0.57]}
-                rotation={[0, 0, 1.57]}
-                scale={[1.47, 1.47, 1.74]}
+                rotation={[1.57, 0, 1.57]}
+                scale={[1.7, 1, 1.43]}
+                // rotation={[0, 0, 1.57]}
+                // scale={[1.47, 1.47, 1.74]}
+
+                castShadow
+                receiveShadow
             >
                 <boxGeometry args={[TileWallSize.x, TileWallSize.y, TileWallSize.z]} />
-                {/* <meshStandardMaterial map={WallTexture} /> */}
-
-                {/* <primitive
-                    object={nodes.tileWall.geometry}
-                    attach="geometry"
-                    onUpdate={(self) => {
-                        self.faceVertexUvs[0] = self.faceVertexUvs[0].map((uv) => [
-                            new THREE.Vector2(uv[0].x, 1 - uv[0].y), // Rotate the UV coordinates
-                            new THREE.Vector2(uv[1].x, 1 - uv[1].y),
-                            new THREE.Vector2(uv[2].x, 1 - uv[2].y),
-                        ]);
-                        self.uvsNeedUpdate = true;
-                    }}
-                /> */}
+                <meshStandardMaterial map={WallTexture} />
             </mesh>
             <mesh
                 geometry={nodes.floorLight.geometry}
