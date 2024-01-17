@@ -6,6 +6,7 @@ import * as THREE from 'three';
 
 export let Marbletexture = [
     "https://images-eu.ssl-images-amazon.com/images/I/91UIbcyJVLL._AC_UL600_SR600,600_.jpg",
+    "https://www.kajariaceramics.com/product-picture/PW03730_b.jpg",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCBgnYstUWmaynJb2irvMu4V1AnZh6RowHbdNwEnJ8YG6fUC8FW7kHPul-6bZQT2Mss7g&usqp=CAU",
     "https://cdn11.bigcommerce.com/s-4990d/images/stencil/1280x1280/products/25612/34660/HD_fondi_decori10__55147.1535659503.jpg?c=2",
     "https://images.unsplash.com/flagged/photo-1622363405079-da46534ce5ec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHRpbGUlMjB0ZXh0dXJlfGVufDB8fDB8fHww&w=1000&q=80",

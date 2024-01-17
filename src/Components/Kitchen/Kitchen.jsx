@@ -196,13 +196,15 @@ const Kitchen = () => {
         <div className=" w-full flex  h-[100vh] relative">
             <div className=" w-full ">
                 <Canvas>
+                    <pointLight position={[-2, 2, 2]} color="pink" intensity={3} distance={5} />
+
                     <Suspense fallback={null}>
                         <Environment files="https://cdn.jsdelivr.net/gh/Sean-Bradley/React-Three-Fiber-Boilerplate@gltfjsx/public/img/forest_slope_1k.hdr" />
                         <ambientLight />
-                        <spotLight intensity={0.9}
+                        <spotLight intensity={10}
                             angle={0.1}
                             penumbra={1}
-                            position={[10, 15, 10]}
+                            position={[1, 1, 1]}
                             castShadow />
                         <Model />
                         <ContactShadows position={[5, 5, 0]} color="pink" />

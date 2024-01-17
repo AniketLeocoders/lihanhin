@@ -1,0 +1,325 @@
+/* reference slide code  */
+.ref-card {
+    animation-duration: 0.9s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    background-image: radial-gradient(203.82% 246.31% at 149.17% -96%, rgb(152 145 173) 0%, rgb(83 128 150) 53.14%, rgb(19 21 41) 91.43%);
+
+}
+
+
+/* code for push card to forwand */
+#s2:checked~.s2,
+#s3:checked~.s3,
+#s4:checked~.s4,
+#s5:checked~.s5,
+#s6:checked~.s6 {
+    animation-name: swing-forwards;
+}
+
+@keyframes swing-forwards {
+    0% {
+        z-index: 5;
+        transform: translate3d(14%, 2.5%, -100px);
+        height: 95%;
+    }
+
+    50% {
+        transform: translate3d(25%, 1.2%, -100px);
+    }
+
+    100% {
+        z-index: 6;
+        height: 100%;
+        transform: translate3d(0%, 0%, -100px);
+
+    }
+}
+
+
+#s2:checked~.s3,
+#s3:checked~.s4,
+#s4:checked~.s5,
+#s5:checked~.s6 {
+    animation-name: swing-forwards2;
+}
+
+@keyframes swing-forwards2 {
+    0% {
+        z-index: 4;
+        transform: translate3d(25%, 7%, -100px);
+        height: 88%;
+    }
+
+    50% {
+        transform: translate3d(35%, 2.2%, -100px);
+    }
+
+    100% {
+        z-index: 5;
+        transform: translate3d(14%, 2.5%, -100px);
+        height: 95%;
+
+    }
+}
+
+#s2:checked~.s4,
+#s3:checked~.s5,
+#s4:checked~.s6 {
+    animation-name: swing-forwards3;
+}
+
+@keyframes swing-forwards3 {
+    0% {
+        z-index: 3;
+        transform: translate3d(35%, 11%, -100px);
+        height: 82%;
+    }
+
+    50% {
+        transform: translate3d(40%, 9%, -100px);
+    }
+
+    100% {
+        z-index: 4;
+        transform: translate3d(25%, 7%, -100px);
+        height: 88%;
+
+    }
+}
+
+#s2:checked~.s5,
+#s3:checked~.s6 {
+    animation-name: swing-forwards4;
+}
+
+@keyframes swing-forwards4 {
+    0% {
+        z-index: 2;
+        transform: translate3d(43%, 17%, -100px);
+        height: 75%;
+    }
+
+    50% {
+        z-index: 2;
+        transform: translate3d(50%, 13%, -100px);
+    }
+
+    100% {
+        z-index: 2;
+        transform: translate3d(35%, 11%, -100px);
+        height: 82%;
+
+    }
+}
+
+#s2:checked~.s6 {
+    animation-name: swing-forwards5;
+}
+
+@keyframes swing-forwards5 {
+    0% {}
+
+    50% {
+        transform: translate3d(55%, 20%, -100px);
+    }
+
+    100% {
+        z-index: 1;
+        transform: translate3d(43%, 17%, -100px);
+        height: 75%;
+
+    }
+}
+
+
+
+/* code for push card to backwand */
+
+#s2:checked~.s1,
+#s3:checked~.s2,
+#s4:checked~.s3,
+#s5:checked~.s4,
+#s6:checked~.s5 {
+    animation-name: swing-backwards;
+}
+
+@keyframes swing-backwards {
+    0% {
+        z-index: 6;
+        height: 100%;
+        transform: translate3d(0%, 0%, -100px);
+    }
+
+    50% {
+        transform: translate3d(-25%, 1.25%, -100px) scale(1.1);
+
+    }
+
+    100% {
+        z-index: 5;
+        height: 95%;
+        transform: translate3d(-14%, 2.5%, -100px);
+    }
+}
+
+#s3:checked~.s1,
+#s4:checked~.s2,
+#s5:checked~.s3,
+#s6:checked~.s4 {
+    animation-name: swing-backwards2;
+}
+
+@keyframes swing-backwards2 {
+    0% {
+        z-index: 5;
+        height: 95%;
+        transform: translate3d(-14%, 2.5%, -100px);
+
+    }
+
+    50% {
+        transform: translate3d(-35%, 7%, -100px);
+        height: 90%;
+        z-index: 4;
+    }
+
+    100% {
+        z-index: 4;
+        height: 88%;
+        transform: translate3d(-25%, 7%, -100px);
+    }
+}
+
+
+#s4:checked~.s1,
+#s5:checked~.s2,
+#s6:checked~.s3 {
+    animation-name: swing-backwards3;
+}
+
+@keyframes swing-backwards3 {
+    0% {
+        z-index: 4;
+        height: 88%;
+        transform: translate3d(-25%, 7%, -100px);
+    }
+
+    50% {
+        transform: translate3d(-45%, 11%, -100px);
+        height: 85%;
+        z-index: 3;
+    }
+
+    100% {
+        z-index: 3;
+        height: 82%;
+        transform: translate3d(-35%, 11%, -100px);
+    }
+}
+
+#s5:checked~.s1,
+#s6:checked~.s2 {
+    animation-name: swing-backwards4;
+}
+
+@keyframes swing-backwards4 {
+    0% {
+        z-index: 3;
+        height: 82%;
+        transform: translate3d(-35%, 11%, -100px);
+    }
+
+    50% {
+        transform: translate3d(-55%, 17%, -100px);
+        height: 79%;
+
+    }
+
+    100% {
+        z-index: 3;
+        height: 75%;
+        transform: translate3d(-43%, 17%, -100px);
+    }
+}
+
+#s6:checked~.s1 {
+    animation-name: swing-backwards5;
+}
+
+@keyframes swing-backwards5 {
+    0% {
+        z-index: 3;
+        height: 75%;
+        transform: translate3d(-43%, 17%, -100px);
+    }
+
+    50% {
+        transform: translate3d(-64%, 22%, -100px);
+        z-index: 2;
+    }
+
+    100% {
+        z-index: 1;
+        height: 69%;
+        transform: translate3d(-49%, 22%, -100px);
+    }
+}
+
+/* .pre-active {
+    border: 5px solid red;
+} */
+
+/* code to push active card to backword when click on previous card of active card  like s2 is active and click on s1 */
+
+#s1:checked~.s2,
+#s2:checked~.s3 {
+    animation-name: s2-backwards;
+}
+
+
+@keyframes s2-backwards {
+    0% {
+        z-index: 6;
+        height: 100%;
+        transform: translate3d(0%, 0%, -100px);
+    }
+
+    50% {
+        transform: translate3d(25%, 2.5%, -100px);
+        height: 93%;
+    }
+
+    100% {
+        z-index: 5;
+        height: 95%;
+        transform: translate3d(14%, 2.5%, -100px);
+    }
+
+}
+
+#s1:checked~.s1 {
+    animation-name: s1-forwards;
+}
+
+
+@keyframes s1-forwards {
+    0% {
+        z-index: 5;
+        height: 95%;
+        transform: translate3d(-14%, 2.5%, -100px);
+    }
+
+    50% {
+        z-index: 6;
+        height: 98%;
+        transform: translate3d(-25%, 0%, -100px);
+    }
+
+    100% {
+        z-index: 6;
+        height: 100%;
+        transform: translate3d(0%, 0%, -100px);
+    }
+
+}

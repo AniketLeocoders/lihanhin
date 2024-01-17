@@ -1,0 +1,29 @@
+.calenderPicker {
+    background: red;
+    padding: 10px;
+
+}
+
+.rdrDefinedRangesWrapper {
+    display: none;
+}
+
+.rdrMonthsHorizontal {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.rdrMonth {
+    flex-grow: 1;
+    max-width: 35%;
+    min-width: 300px;
+}
+
+.rdrDay {
+    color: black;
+}
+
+.rdrDayDisabled {
+    color: blueviolet !important;
+}

@@ -3,10 +3,7 @@
 import { Suspense, useEffect, useRef, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { ContactShadows, Environment, OrbitControls, useGLTF, useTexture } from '@react-three/drei'
-import RoomModel from './RoomModel';
-import OptionButtons from './OptionButtons';
-import { HexColorPicker } from 'react-colorful';
-import LivingModel from '../living-room/LivingModel';
+import CabinateModel from '../../js_models/CabinateModel';
 
 
 const RoomDemo = () => {
@@ -56,17 +53,8 @@ const RoomDemo = () => {
                             penumbra={1}
                             position={[10, 15, 10]}
                             castShadow />
-                        <RoomModel
-                            floorConf={floorConf}
-                            wallConf={wallConf}
-                            tableConf={tableConf}
-                            windowConf={windowConf}
-                            setsidborderConf={setsidborderConf}
-                            cabinateConf={cabinateConf}
-                            setSetselectedObject={setSetselectedObject}
-                        />
-                        {/* <LivingModel/> */}
-                        <ContactShadows position={[5, 5, 0]} color="pink" />
+                        <CabinateModel />
+                        {/* <ContactShadows position={[5, 5, 0]} color="pink" /> */}
                         <OrbitControls
                             enablePan={true}
                             enableZoom={true}
@@ -76,12 +64,6 @@ const RoomDemo = () => {
                     </Suspense>
                 </Canvas>
             </div>
-
-            {/* <div className=" absolute flex flex-col gap-3 top-0 right-0 bg-gray-600 px-10 py-4 rounded-lg">
-                <OptionButtons RoomConfigurationOptions={RoomConfigurationOptions} />
-                <p className=' text-lg text-center mt-3 font-semibold text-white capitalize'>{setselectedObject} color</p>
-                <HexColorPicker onChange={GetColor} />
-            </div> */}
         </div>
     )
 }

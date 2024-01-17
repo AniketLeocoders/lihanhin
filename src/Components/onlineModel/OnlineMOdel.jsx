@@ -4,8 +4,8 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { Environment, OrbitControls, PerspectiveCamera } from '@react-three/drei'
 
 const OnlineMOdel = () => {
-
-    const gltf = useLoader(GLTFLoader, 'https://cdn.jsdelivr.net/gh/AniketLeocoders/lihanhin@main/public/models/newhouse.glb')
+    // https://cdn.jsdelivr.net/gh/{username}/{repository}@{version}/{path-to-file} version means branch
+    const gltf = useLoader(GLTFLoader, 'https://cdn.jsdelivr.net/gh/AniketLeocoders/lihanhin@main/public/models/bathroom.glb')
     const { nodes, materials } = gltf
     return (
         <div className=' h-[100vh] flex relative bg-gray-500 '

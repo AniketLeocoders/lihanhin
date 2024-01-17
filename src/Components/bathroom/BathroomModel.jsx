@@ -1,9 +1,8 @@
 import { useGLTF, useTexture } from "@react-three/drei"
-import { useRef } from "react"
+import {  useRef } from "react"
 import { useSelector } from "react-redux";
 import * as THREE from 'three';
 import { GlassMaterial } from "../living-room/LivingModel";
-import { useSpring, animated } from 'react-spring';
 
 
 
@@ -21,6 +20,8 @@ const BathroomModel = (props) => {
     const floorTexture = useTexture(BathroomParameter.floorParameter?.CureentfloorTexture);
     floorTexture.wrapS = floorTexture.wrapT = THREE.RepeatWrapping;
     floorTexture.repeat.set(12, 5);
+
+    // console.log(floorTexture.image.complete)
 
     const TileWallSize = new THREE.Vector3();
     nodes.tileWall.geometry.computeBoundingBox();

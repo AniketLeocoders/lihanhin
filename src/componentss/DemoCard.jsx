@@ -9,7 +9,9 @@ const DemoCard = (props) => {
     const [like, setLike] = useState(false)
 
     return (
-        <div className=' flex-1 max-w-sm min-w-[300px] rounded-md overflow-hidden p-2 border border-gray-300 shadow-xl hover:shadow-2xl ' >
+        <div className={` ${props.id} flex-1 max-w-sm min-w-[300px] rounded-md overflow-hidden p-2 border border-gray-300 shadow-xl hover:shadow-2xl `}
+            id={props.id}
+        >
             <div className=" w-full aspect-video rounded-md overflow-hidden   bg-gray-400"> {/* animate-pulse */}
                 <img src={imgUrl} className=' w-full  h-full object-cover' alt="" srcSet="" />
             </div>

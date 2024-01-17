@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+.Newcalender {
+    min-height: 100vh;
+    max-width: 1180px;
+    background: #cddbf4;
+    font-family: Poppins !important;
+
+
+}
+
+.calendar table.month th.month-title {
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 13px !important;
+    padding-bottom: 0px !important;
+}
+
+.calendar table.month th.day-header {
+    color: #969CAB;
+    font-size: 11.518px !important;
+    font-weight: 600;
+}
+
+.months-container {
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 12px 16px;
+    background: #cddbf4;
+
+}
+
+.calendar .months-container .month-container {
+    border-radius: 12px;
+    background: #FFF;
+    flex: 1 1 20%;
+    height: auto !important;
+    /* box-shadow: 0px 3px 3px -2px rgba(0,0,0,0.2), 0px 3px 4px 0px rgba(0,0,0,0.14), 0px 1px 8px 0px rgba(0,0,0,0.12); */
+    /* border: 1px solid yellow; */
+}
+
+table {
+    width: 100%;
+    border-spacing: 0px 6px !important;
+    border-collapse: separate !important;
+}
+
+.month .day {
+    color: #000821;
+    font-size: 11.518px;
+    font-weight: 600;
+}
+
+.calendar table.month td.disabled {
+    color: #969CAB !important;
+    font-size: 11.518px;
+    font-weight: 600;
+    position: relative;
+}
+
+.calendar table.month td.disabled::after {
+    content: '';
+    width: 19.745px;
+    height: 0.823px;
+    background: #969CAB;
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+td {
+    /* border: 1px solid red !important; */
+}
+
+
+.range .day-content {
+    /* background-color: #2261ea 3d !important; */
+    background-color: #d7e0f7 !important;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+
+.range.day-start .day-content,
+.range.range-end .day-content {
+    background-color: #3666df !important;
+    color: white;
+}
+
+/* .range.range-start .day-content,
+.range.range-end .day-content {
+    background-color: #3666df !important;
+    color: white;
+} */
+
+.range.range-start .day-content {
+    border-radius: 50px 0 0 50px !important;
+    /* overflow: hidden; */
+}
+
+.range.range-end .day-content {
+    border-radius: 0 50px 50px 0 !important;
+    /* overflow: hidden; */
+}

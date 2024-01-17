@@ -46,11 +46,12 @@ const Bathroom = () => {
                     />
                     <Suspense fallback={<ModelLoader />}>
                         <Environment files="https://cdn.jsdelivr.net/gh/Sean-Bradley/React-Three-Fiber-Boilerplate@gltfjsx/public/img/forest_slope_1k.hdr" />
-                        <ambientLight />
+                        <ambientLight  />
+                        {/* <pointLight position={[1, 1, 1]} color="yellow" intensity={1} distance={50} /> */}
                         <BathroomModel />
                         <BathroomAnnotation />
                         <OrbitControls enablePan={true} enableZoom={true} enableRotate={true}
-                            // position={[3.5908, 1.7840, -1.734]}
+                        // position={[3.5908, 1.7840, -1.734]}
                         //  minPolarAngle={0}
                         //  maxPolarAngle={Math.PI / 2} 
                         />
