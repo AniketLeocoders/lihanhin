@@ -5,6 +5,9 @@ import Bake_example_model from './Bake_example_model';
 import Hall_model from '../../hall/Hall_model';
 import Hallfinal11_model from '../../hall/Hallfinal11_model';
 import Hallfinal111_new from '../../hall/Hallfinal111_new';
+import CheckingModel from '../../hall/CheckingModel';
+import RoomModel from '../../hall/RoomModel';
+import CheckingModelTexture from '../../hall/CheckingModelTexture';
 // import sjisd from "../../../../public/baked-02.jpeg"
 // import sjisd from "/textures/leather/baked02.jpeg"
 
@@ -28,10 +31,15 @@ const Bake_example = ({ scale = Array.from({ length: 50 }, () => 0.5 + Math.rand
 
 
                 {/* <Hall_model /> */}
-                <Hallfinal11_model />
+                {/* <Hallfinal11_model /> */}
                 {/* <Hallfinal111_new /> */}
+                {/* <CheckingModel /> */}
 
-                <Bake_example_model />
+
+                <CheckingModelTexture />
+                {/* <RoomModel /> */}
+
+                {/* <Bake_example_model /> */}
                 {/* <Environment files="https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/dancing_hall_1k.hdr" blur={1} /> */}
                 <Environment preset="apartment" />
                 <OrbitControls />

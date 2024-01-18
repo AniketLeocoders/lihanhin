@@ -8,7 +8,7 @@ import * as THREE from 'three';
 const Hallfinal111_new = (props) => {
   const group = useRef()
   const texture = useTexture('/textures/leather/BBB.jpg')
-  texture.flipY = false;
+    texture.flipY = false;
   texture.encoding = THREE.sRGBEncoding;
 
   const textureMaterial = new THREE.MeshStandardMaterial({
