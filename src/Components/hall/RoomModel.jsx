@@ -35,15 +35,15 @@ const RoomModel = (props) => {
                 castShadow
                 receiveShadow
                 geometry={nodes.Floor.geometry}
-                // material={textureMaterial}
+                material={textureMaterial}
                 // material={nodes.Floor.material}
                 position={[0, -1.468, 0]}
                 scale={2}
             >
-                <boxGeometry args={[2, 0.005, 2]} />
+                {/* <boxGeometry args={[2, 0.005, 2]} />
                 <meshBasicMaterial map={floorTexture}
                     doubleSided={true}
-                />
+                /> */}
             </mesh>
             <mesh
                 castShadow
