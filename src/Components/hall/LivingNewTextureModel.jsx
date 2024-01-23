@@ -183,6 +183,8 @@ const LivingNewTextureModel = (props) => {
                 receiveShadow
                 geometry={nodes.parda.geometry}
                 material={textureMaterial}
+                scale={[1, 1, 2]}
+                position={[0, 0, 1]}
             />
             <mesh
                 castShadow
