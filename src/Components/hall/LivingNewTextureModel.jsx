@@ -8,7 +8,7 @@ import { Bathroom_marble } from '../../Constants';
 
 const LivingNewTextureModel = (props) => {
     const loader = new THREE.TextureLoader();
-    const texture = useTexture('/textures/leather/testbake.jpg')
+    const texture = useTexture('/textures/leather/finalhallwithbake.jpg')
     texture.flipY = false;
     texture.encoding = THREE.sRGBEncoding;
 
@@ -34,48 +34,71 @@ const LivingNewTextureModel = (props) => {
     tvconsoleRight.flipY = false; // tvconsoleRight.repeat.x = -1; tvconsoleRight.center.set(0.5, 0.5);
     tvconsoleRight.rotation = Math.PI;
 
-    const { nodes, materials } = useGLTF("./models/testbake.glb");
+    const { nodes, materials } = useGLTF("./models/finalhallwithbake.glb");
     return (
         <group {...props} dispose={null}>
+
+            {/* reflective floor surface */}
+            <mesh position={[0, -1.27, 0]} rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
+                <planeGeometry args={[3.85, 2.8, 10]} />
+                <MeshReflectorMaterial
+                    map={floorTexture} // Apply the texture here
+                    resolution={720}
+                    args={[35, 27]} // Adjust the size of the reflector
+                    mirror={0.3}
+                    mixBlur={8}
+                    mixStrength={0.5}
+                />
+            </mesh>
+
             <mesh
                 castShadow
                 receiveShadow
                 geometry={nodes.left_wall.geometry}
-                material={textureMaterial}
-            />
+            // material={nodes.left_wall.material}
+            >
+                <meshStandardMaterial color={'#915788'} />
+            </mesh>
             <mesh
                 castShadow
                 receiveShadow
                 geometry={nodes.right_wall.geometry}
-                material={textureMaterial}
-            />
+            // material={nodes.right_wall.material}
+            >
+                <meshStandardMaterial color={'#915788'} />
+            </mesh>
             <mesh
                 castShadow
                 receiveShadow
                 geometry={nodes.celling.geometry}
-                material={textureMaterial}
+                material={nodes.celling.material}
             />
             <mesh
                 castShadow
                 receiveShadow
                 geometry={nodes.floor.geometry}
-                material={textureMaterial}
+            // material={nodes.floor.material}
             />
-            <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes.Kinfolk_Magazine.geometry}
-                material={textureMaterial}
-                position={[0.131, -1.03, -0.475]}
-                scale={0.99}
-            />
-            <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes.sofa.geometry}
-                material={textureMaterial}
-                position={[-1.381, -1.155, 0.47]}
-            />
+            <group position={[0.131, -1.03, -0.475]} scale={0.99}>
+                <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.Plane057.geometry}
+                    material={textureMaterial}
+                />
+                <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.Plane057_1.geometry}
+                    material={textureMaterial}
+                />
+                <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.Plane057_2.geometry}
+                    material={textureMaterial}
+                />
+            </group>
             <mesh
                 castShadow
                 receiveShadow
@@ -86,29 +109,62 @@ const LivingNewTextureModel = (props) => {
             <mesh
                 castShadow
                 receiveShadow
-                geometry={nodes.wood_plane.geometry}
+                geometry={nodes.Cube.geometry}
                 material={textureMaterial}
-                position={[1.651, 0.003, -1.289]}
+                position={[1.651, 0.003, -1.293]}
             />
             <mesh
                 castShadow
                 receiveShadow
-                geometry={nodes.wood_plane001.geometry}
+                geometry={nodes.Cube001.geometry}
                 material={textureMaterial}
-                position={[-1.653, 0.003, -1.289]}
+                position={[-1.655, 0.003, -1.293]}
+            />
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.Cube002.geometry}
+                material={textureMaterial}
+                position={[-1.417, -1.124, 0.493]}
+                scale={[1.061, 0.906, 1]}
             />
             <mesh
                 castShadow
                 receiveShadow
                 geometry={nodes.wall_plane001.geometry}
-                material={textureMaterial}
-            />
+                position={[-0.702, 0.03, -1.3]}
+            // material={nodes.wall_plane001.material}
+            >
+                <boxGeometry
+                    args={[1.4, 2.5, 0.03]}
+                />
+                <MeshReflectorMaterial
+                    map={tvconsoleLeft} // Apply the texture here
+                    resolution={720}
+                    args={[35, 27]} // Adjust the size of the reflector
+                    mirror={0.2}
+                    // mirror={1}
+                    mixBlur={8}
+                    mixStrength={0.5}
+                />
+            </mesh>
             <mesh
                 castShadow
                 receiveShadow
                 geometry={nodes.wall_plane.geometry}
-                material={textureMaterial}
-            />
+                // material={nodes.wall_plane.material}
+                position={[0.702, 0.03, -1.3]}
+            >
+                <boxGeometry args={[1.4, 2.5, 0.03]} />
+                <MeshReflectorMaterial
+                    map={tvconsoleRight} // Apply the texture here
+                    resolution={720}
+                    args={[35, 27]} // Adjust the size of the reflector
+                    mirror={0.2}
+                    mixBlur={8}
+                    mixStrength={0.5}
+                />
+            </mesh>
             <mesh
                 castShadow
                 receiveShadow
@@ -132,28 +188,33 @@ const LivingNewTextureModel = (props) => {
                 castShadow
                 receiveShadow
                 geometry={nodes.glass.geometry}
-                material={textureMaterial}
+                // material={materials.Glass}
                 position={[-0.145, 0, 0]}
-            />
-            <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes.plant.geometry}
-                material={textureMaterial}
-                position={[-0.145, 0, 0]}
-            />
-            <mesh
-                castShadow
-                receiveShadow
-                geometry={nodes.kapda.geometry}
-                material={textureMaterial}
-                position={[-1.349, -1.055, -0.012]}
-                rotation={[0.066, -0.213, 0.014]}
-            />
+            >
+                {/* <boxGeometry /> */}
+                <meshBasicMaterial color="#ffffff" opacity={0.4} transparent />
+            </mesh>
+
+            <group position={[-0.262, -0.854, -0.564]} scale={0.115}>
+                <group position={[0, -0.794, 0]}>
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.trunk022.geometry}
+                        material={textureMaterial}
+                    />
+                    <mesh
+                        castShadow
+                        receiveShadow
+                        geometry={nodes.trunk022_1.geometry}
+                        material={textureMaterial}
+                    />
+                </group>
+            </group>
         </group>
     );
 }
 
-useGLTF.preload("./models/testbake.glb");
-useTexture.preload("/textures/leather/testbake.jpg");
+useGLTF.preload("./models/finalhallwithbake.glb");
+useTexture.preload("/textures/leather/finalhallwithbake.jpg");
 export default LivingNewTextureModel
