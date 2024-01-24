@@ -1,18 +1,26 @@
 import { Environment, OrbitControls, Sparkles, Stars } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
-import * as THREE from 'three';
-import Bake_example_model from './Bake_example_model';
-import Hall_model from '../../hall/Hall_model';
-import Hallfinal11_model from '../../hall/Hallfinal11_model';
-import Hallfinal111_new from '../../hall/Hallfinal111_new';
-import CheckingModel from '../../hall/CheckingModel';
-import RoomModel from '../../hall/RoomModel';
-import CheckingModelTexture from '../../hall/CheckingModelTexture';
 import LivingNewTextureModel from '../../hall/LivingNewTextureModel';
+import * as THREE from 'three';
+// import Bake_example_model from './Bake_example_model';
+// import Hall_model from '../../hall/Hall_model';
+// import Hallfinal11_model from '../../hall/Hallfinal11_model';
+// import Hallfinal111_new from '../../hall/Hallfinal111_new';
+// import CheckingModel from '../../hall/CheckingModel';
+// import RoomModel from '../../hall/RoomModel';
+// import CheckingModelTexture from '../../hall/CheckingModelTexture';
+// import SpringAnimation from './SpringAnimation';
+// import { MeshWithTransition } from './MeshWithTransition';
+// import { Bathroom_marble } from '../../../Constants';
+// import DemoBox from './demobox';
+import Doday from '../../hall/Doday';
 // import sjisd from "../../../../public/baked-02.jpeg"
 // import sjisd from "/textures/leather/baked02.jpeg"
 
 const Bake_example = ({ scale = Array.from({ length: 50 }, () => 0.5 + Math.random() * 4) }) => {
+    // return (
+    //     <DemoBox />
+    // )
     return (
         <div className="h-screen flex flex-col">
             <div className="h-16 bg-white"></div>
@@ -50,6 +58,12 @@ const Bake_example = ({ scale = Array.from({ length: 50 }, () => 0.5 + Math.rand
                         {/* <CheckingModelTexture /> */}
 
                         <LivingNewTextureModel />
+                        {/* <Doday /> */}
+                        {/* <SpringAnimation /> */}
+                        {/* <MeshWithTransition
+                            texture1={Bathroom_marble[1]}
+                            texture2={Bathroom_marble[2]}
+                        /> */}
                         {/* <RoomModel /> */}
 
                         {/* <Bake_example_model /> */}

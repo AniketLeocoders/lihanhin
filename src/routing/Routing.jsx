@@ -5,6 +5,7 @@ import Homepage from "../pages/Homepage";
 import Loadingpage from "../pages/Loadingpage"
 import RefCardCarusal from "../componentss/ref-carousal/RefCardCarusal";
 import Stylecardslider from "../componentss/Stylecardslider";
+import Shader from "../Components/Shader/Shader";
 const Bake_example = lazy(() => import('../Components/baked/example/Bake_example'));
 const CardCarusal = lazy(() => import('../componentss/CardCarusal'));
 const SecondCardSlider = lazy(() => import('../componentss/SecondCardSlider'));
@@ -15,6 +16,7 @@ const Routing = () => {
     let RoutingArray = [
         { path: "/", component: Homepage },
         { path: "/Bake_example", component: Bake_example },
+        { path: "/Shader", component: Shader },
         { path: "/bathroom", component: Bathroom },
         { path: "/kitchen", component: MordernKitchen },
         { path: "/card-carusal", component: CardCarusal },
